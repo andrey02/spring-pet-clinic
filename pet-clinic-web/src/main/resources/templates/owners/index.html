@@ -7,5 +7,19 @@
 <body>
 <h1>Owners Page</h1>
 <p th:text="'list of Owners'"></p>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    <tr th:each="objeto: ${owners}"> <!-- for(Owner owner : owners) -->
+        <td th:text="${objeto.id}"></td>
+        <td th:text="${objeto.firstName}"></td>
+        <td th:text="${objeto.lastName}"></td>
+    </tr>
+
+</table>
 </body>
 </html>
