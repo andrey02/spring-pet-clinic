@@ -1,6 +1,6 @@
-package com.andrei.springpetclinic.Services.map;
+package com.andrei.springpetclinic.services.map;
 
-import com.andrei.springpetclinic.Services.CRUDService;
+import com.andrei.springpetclinic.services.CRUDService;
 
 import java.util.HashMap;
 import java.util.HashSet;

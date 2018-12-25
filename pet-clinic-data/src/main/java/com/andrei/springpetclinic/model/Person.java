@@ -1,8 +1,14 @@
-package com.andrei.springpetclinic.Model;
+package com.andrei.springpetclinic.model;
 
 public class Person extends BaseEntity {
     private String firstName;
     private String lastName;
+
+    public Person(Long id, String firstName, String lastName) {
+        super(id);
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
     public String getFirstName() {
         return firstName;

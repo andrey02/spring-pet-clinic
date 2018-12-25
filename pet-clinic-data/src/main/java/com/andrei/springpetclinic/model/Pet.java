@@ -1,4 +1,4 @@
-package com.andrei.springpetclinic.Model;
+package com.andrei.springpetclinic.model;
 
 import java.time.LocalDate;
 
@@ -6,6 +6,13 @@ public class Pet extends BaseEntity {
     private PetType petType;
     private Owner owner;
     private LocalDate birthDate;
+
+    public Pet(Long id, PetType petType, Owner owner, LocalDate birthDate) {
+        super(id);
+        this.petType=petType;
+        this.owner=owner;
+        this.birthDate=birthDate;
+    }
 
     public PetType getPetType() {
         return petType;

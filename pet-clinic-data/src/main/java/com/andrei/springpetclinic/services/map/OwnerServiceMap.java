@@ -1,10 +1,9 @@
-package com.andrei.springpetclinic.Services.map;
+package com.andrei.springpetclinic.services.map;
 
-import com.andrei.springpetclinic.Model.Owner;
-import com.andrei.springpetclinic.Services.OwnerService;
+import com.andrei.springpetclinic.model.Owner;
+import com.andrei.springpetclinic.services.OwnerService;
 
 import java.util.Map;
-import java.util.Set;
 
 public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService {
 
