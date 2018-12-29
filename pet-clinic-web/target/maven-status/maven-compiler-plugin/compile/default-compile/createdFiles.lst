@@ -1,1 +1,5 @@
 com\andrei\springpetclinic\SpringpetclinicApplication.class
+com\andrei\springpetclinic\bootstrap\FakeDataLoader.class
+com\andrei\springpetclinic\controllers\VetController.class
+com\andrei\springpetclinic\controllers\IndexController.class
+com\andrei\springpetclinic\controllers\OwnerController.class
