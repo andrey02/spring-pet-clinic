@@ -5,9 +5,9 @@ import com.andrei.springpetclinic.services.CRUDService;
 
 import java.util.*;
 
-public abstract class AbstractMapService<T extends BaseEntity,ID extends Long> implements CRUDService<T,ID>  {
+public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> implements CRUDService<T, ID> {
 
-    protected Map<Long,T> map = new HashMap<>();
+    protected Map<Long, T> map = new HashMap<>();
 
 
     public Set<T> findAll() {
@@ -20,13 +20,13 @@ public abstract class AbstractMapService<T extends BaseEntity,ID extends Long> i
     }
 
 
-    public T Save( T object) {
-        if(object != null) {
-            if(object.getId() == null) {
+    public T Save(T object) {
+        if (object != null) {
+            if (object.getId() == null) {
                 object.setId(getNextLong());
             }
 
-            map.put(object.getId(),object);
+            map.put(object.getId(), object);
         } else {
             throw new RuntimeException("Object não pode ser nulo, please!");
         }
@@ -43,7 +43,7 @@ public abstract class AbstractMapService<T extends BaseEntity,ID extends Long> i
         map.entrySet().removeIf(entry -> entry.getValue().equals(object));
     }
 
-    private Long getNextLong(){
+    private Long getNextLong() {
         return Collections.max(map.keySet()) + 1;
     }
 }
