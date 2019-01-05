@@ -15,7 +15,7 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
     }
 
 
-    public T findAllById(ID id) {
+    public T findById(ID id) {
         return map.get(id);
     }
 
