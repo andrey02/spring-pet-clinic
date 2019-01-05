@@ -1,9 +1,9 @@
 package com.andrei.springpetclinic.model;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Pet extends BaseEntity {
@@ -15,9 +15,13 @@ public class Pet extends BaseEntity {
     private PetType petType;
 
     @ManyToOne
-    @JoinColumn(name="owner_id")
+    @JoinColumn (name = "owner_id")
     private Owner owner;
     private LocalDate birthDate;
+
+    @OneToMany (cascade = CascadeType.ALL, mappedBy = "pet")
+    //mappedBy procura do outro lado do relacionamento o atributo especificado no nome para fazer o relacionamento
+    private Set<Visit> visits = new HashSet<>();
 
     public Pet(Long id, PetType petType, Owner owner, LocalDate birthDate) {
         super(id);
@@ -56,5 +60,13 @@ public class Pet extends BaseEntity {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public Set<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
     }
 }
