@@ -29,6 +29,14 @@ public class FakeDataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        int count = petTypeService.findAll().size();
+
+        if(count == 0)
+            loadData();
+
+    }
+
+    private void loadData() {
         //owner
         Owner owner = new Owner(1L,"Andrei","Teixeira");
         Owner owner1 = new Owner(2L,"Jorge","Teixeira");
@@ -55,9 +63,10 @@ public class FakeDataLoader implements CommandLineRunner {
         Vet vet1 = new Vet(2L,"Tereza", "Cristina");
 
         Speciality speciality = new Speciality(1L);
-        speciality.setDescription("First");
+        speciality.setDescription("radiology");
         Speciality speciality1 = new Speciality(2L);
-        speciality1.setDescription("Second");
+        speciality1.setDescription("sugery");
+        //dentistry
 
         vet.getSpecialities().add(speciality);
         vet1.getSpecialities().add(speciality1);
